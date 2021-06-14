@@ -17,12 +17,14 @@ console.log('Max value from user number is ', getMaxDigitNumber(1234562))
 
 const getNumberDegree = (number, degree) => {
     let totalValue = 1;
+    degree = Math.abs(Math.round(degree))
+    console.log(degree)
     for (i = 1; i <= degree; i++) {
         totalValue *= number
     }
     return totalValue
 }
-console.log('Total value number degree is ', getNumberDegree(10, 10))
+console.log('Total value number degree is ', getNumberDegree(10, -20.3))
 
 //3.Створити функцію, яка форматує ім'я, роблячи першу букву великою. ("влад" -> "Влад", "вЛАД" -> "Влад" і так далі);
 const getNewName = (oldName) => {
@@ -46,10 +48,10 @@ console.log('Your clear salary is ', getClearSalary(1000));
 const getRandomNumber = (start, end) => {
     const maxNumber = Math.max(start, end);
     const minNumber = Math.min(start, end)
-    let rand = minNumber + Math.random() * (maxNumber + 1 - minNumber);
+    let rand = minNumber + Math.random() * (maxNumber - minNumber);
     return Math.round(rand);
 }
-console.log('Your random number is ', getRandomNumber(-15, 200))
+console.log('Your random number is ', getRandomNumber(0, 3))
 
 //6.Створити функцію, яка рахує скільки разів певна буква повторюється в слові.
 
@@ -68,13 +70,14 @@ console.log('Your letter repeated ', getNumberOfLetter('wsawwwwwaassadw', 'w'), 
 //7.Створіть функцію, яка конвертує долари в гривні та навпаки в залежності від наявності символа $ або UAH в рядку
 const getExchangeSum = (sum, currency) => {
     let rate = 25;
-
+    currency = currency.toUpperCase();
     if (currency === 'UAH') {
         exchangeSum = sum / rate;
     }
     else if (currency === '$') {
         exchangeSum = sum * rate;
     }
+    else (exchangeSum = 'You have inputted incorrect values')
     return exchangeSum;
 }
 console.log('Sum after exchanging is ', getExchangeSum(100, 'UAH'))
@@ -89,7 +92,7 @@ const getRandomPassword = (length = 8) => {
     }
     return password;
 }
-console.log('Random password is ',getRandomPassword())
+console.log('Random password is ', getRandomPassword())
 
 //9.Створіть функцію, яка видаляє всі букви з речення
 const getSentenseWithoutLetter = (sentence, letter) => {
@@ -102,7 +105,7 @@ const getSentenseWithoutLetter = (sentence, letter) => {
     }
     return newSentence;
 }
-console.log('New string without selected letter',getSentenseWithoutLetter('asdqewrw fwwww', 'w'))
+console.log('New string without selected letter', getSentenseWithoutLetter('asdqewrw fwwww', 'w'))
 
 //10.Створіть функцію, яка перевіряє, чи є слово паліндромом.
 
@@ -127,4 +130,4 @@ const getSenteсeWithoutRepeatingWords = (sentence) => {
     }
     return newSentence;
 }
-console.log("Your new string without duplicat letters : ",getSenteсeWithoutRepeatingWords("Бісквіт був дуже ніжним"))
+console.log("Your new string without duplicat letters : ", getSenteсeWithoutRepeatingWords("Бісквіт був дуже ніжним"))
