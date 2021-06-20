@@ -60,6 +60,7 @@ console.log('Ex.7 Numbers divided by 5 : ', getDividedByFive(6, 2, 55, 11, 78, 2
 //9. Створіть функцію divideByThree(word), яка розбиває кожне слово на умовні склади по 3 букви. Якщо букв менше трьох – не розбиває. Пробіли завжди видаляються. Рядок приводится до нижнього регістру
 
 const getDivideByThree = (word) => {
+    word = word.toLowerCase()
     const newArray = [];
     for (let i = 0; i < word.length; i += 3) {
         let slog = word.slice(i, i + 3)
@@ -67,5 +68,5 @@ const getDivideByThree = (word) => {
     }
     return newArray
 }
-console.log('Ex.9 Word divided to 3 slogs : ', getDivideByThree('abrbababrbab'))
+console.log('Ex.9 Word divided to 3 slogs : ', getDivideByThree('abrbabFAFrbab'))
 
