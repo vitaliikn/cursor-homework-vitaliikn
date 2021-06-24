@@ -3,9 +3,9 @@
 const getRandomArray = (length, min, max) => {
     min = Math.min(min, max);
     max = Math.max(min, max);
-    let array = [];
+    const array = [];
     for (let i = 0; i < length; i++) {
-        array.push([Math.round(min + Math.random() * (max - min))])
+        array.push(Math.round(min + Math.random() * (max - min)))
     }
     return array;
 }
@@ -16,7 +16,7 @@ console.log('Ex.1, random array : ', getRandomArray(5, 1, 10))
 
 const getAverage = (...numbers) => {
     let sum = 0
-    let arrayWithouNoIntegerNumber = numbers.filter(item => Number.isInteger(item))
+    const arrayWithouNoIntegerNumber = numbers.filter(item => Number.isInteger(item))
     sum = arrayWithouNoIntegerNumber.reduce((previousValue, item) => item + previousValue, 0)
     return sum / arrayWithouNoIntegerNumber.length
 }
@@ -25,8 +25,8 @@ console.log('Ex.3 Average is : ', getAverage(6, 2, 55, 11, 78, 2, 55, 16.5, 77, 
 //4. Створіть функцію getMedian(...numbers) – яка рахує медіану всіх переданих в неї аргументів. НЕЦІЛІ ЧИСЛА ІГНОРУЮТЬСЯ
 
 const getMedian = (...numbers) => {
-    let arrayWithouNoIntegerNumber = numbers.filter(number => Number.isInteger(number)).sort((a, b) => (a - b))
-    let halfOfLength = Math.floor(arrayWithouNoIntegerNumber.length / 2)
+    const arrayWithouNoIntegerNumber = numbers.filter(number => Number.isInteger(number)).sort((a, b) => (a - b))
+    const halfOfLength = Math.floor(arrayWithouNoIntegerNumber.length / 2)
     return arrayWithouNoIntegerNumber.length % 2 === 0 ?
         (arrayWithouNoIntegerNumber[(halfOfLength - 1)] + arrayWithouNoIntegerNumber[halfOfLength]) / 2
         : arrayWithouNoIntegerNumber[Math.floor(halfOfLength)]
