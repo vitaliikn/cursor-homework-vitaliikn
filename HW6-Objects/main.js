@@ -25,31 +25,31 @@ const students = [{
 }];
 
 //1.Створіть функцію getSubjects(students[0] --> ["Math", "Algorithms", "Data science"] - яка повертає список предметів для конкретного студента. Зверніть увагу – назву предмету необхідно повертати з великої літери, а _ – замінити на пробіл
-const getScience = (studentNumber) => {
-    const science = Object.keys(students[studentNumber].subjects).map(item => item[0].toUpperCase() + item.slice(1).replace('_', ' '))
+const getScience = (student) => {
+    const science = Object.keys(student.subjects).map(item => item[0].toUpperCase() + item.slice(1).replace('_', ' '))
     return science
 }
-console.log('Ex.1 ', getScience(0))
+console.log('Ex.1 ', getScience(students[0]))
 
 //2. Створіть функцію getAverageMark(students[0]) --> 3.79 – яка поверне середню оцінку по усім предметам для переданого студента НЕ МАСИВА СТУДЕНТІВ. Оцінку округліть до 2ого знаку
 
-const getAverageMark = (studentNumber) => {
-    const allStudentMarks = Object.values(students[studentNumber].subjects).flat()
+const getAverageMark = (student) => {
+    const allStudentMarks = Object.values(student.subjects).flat()
     const sumMarks = allStudentMarks.reduce((previousValue, item) => previousValue + item, 0)
     const result = Number((sumMarks / allStudentMarks.length).toFixed(2))
     return result
 }
-console.log('Ex.2 ', getAverageMark(1))
+console.log('Ex.2 ', getAverageMark(students[0]))
 
 //3.Створіть функцію getStudentInfo(students[0]) --> { "course": 3, "name": "Tanya", "averageMark": 3.79} – яка повертає інформацію загального виду по переданому студенту (вам знадобиться функція з попереднього завдання).
 
-const getStudentInfo = (studentNumber) => {
-    const info = { ...students[studentNumber] }
+const getStudentInfo = (student) => {
+    const info = { ...student }
     delete info.subjects
-    info.averagemark = getAverageMark(studentNumber)
+    info.averagemark = getAverageMark(student)
     return info
 }
-console.log('Ex.3 ', getStudentInfo(0))
+console.log('Ex.3 ', getStudentInfo(students[0]))
 
 //4.Ствроіть функцію getStudentsNames(students) --> ["Anton", "Tanya, "Victor"] – яка повертає імена студентів у алфавітному порядку
 
