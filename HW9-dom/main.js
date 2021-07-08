@@ -14,10 +14,6 @@ const getBoxes = () => {
         wrapper.appendChild(box)
         box.style.backgroundColor = getRandomColor()
     }
-    
-}
-getBoxes();
-const getChangingColor = () => {
     setInterval(() => {
         const boxes = document.querySelectorAll('div');
         for (let box of boxes) {
@@ -25,5 +21,8 @@ const getChangingColor = () => {
         }
     }, 1000)
 }
-getChangingColor();
+    
+
+getBoxes();
+
 
