@@ -4,7 +4,6 @@ const getRandomColor = () => {
     const r = +Math.random() * 255
     const g = +Math.random() * 255
     const b = +Math.random() * 255
-    setInterval(getRandomColor, 1000)
     return (`rgb(${r},${g},${b})`)
 }
 
