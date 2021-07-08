@@ -11,7 +11,7 @@ const getRandomColor = () => {
 const getBoxes = () => {
     for (let i = 0; i < 25; i++) {
         const box = document.createElement('div')
-        wrapper.appendChild(box)
+        wrapper.append(box)
         box.style.backgroundColor = getRandomColor()
     }
     setInterval(() => {
