@@ -30,7 +30,11 @@ class Student {
     }
     //6.Створіть метод this.dismiss, який "виключить" студента
     setDismiss() {
-        return this.dismiss ? this.dismiss = false : this.dismiss = true;
+        return this.dismiss =true;
+        //? this.dismiss = false : this.dismiss = true;
+    }
+    setRecover(){
+        return this.dismiss = false;
     }
 }
 
@@ -57,8 +61,9 @@ ostap.setMarks=5
 console.log('Task 4 : ',ostap.getMarks)
 console.log('Task 5 : ',ostap.getAverageMark)
 ostap.setDismiss()
+
 console.log('Task 6 : ',ostap.getMarks)
-ostap.setDismiss()
+ostap.setRecover()
 console.log('Task 6 : ',ostap.getMarks)
 
 
