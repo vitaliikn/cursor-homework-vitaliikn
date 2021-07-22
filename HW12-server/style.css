@@ -1,0 +1,34 @@
+.wrapper{
+display:grid;
+grid-template-rows: 2fr 8fr;
+}
+.menu{
+    background-color:red;
+    max-height: 100px;
+    
+}
+.content{
+    background-color:blue;
+}
+.menu button {
+    border: 2px solid black;
+    border-radius:6px;
+    width:10rem;
+    
+}
+.menu button:last-child{
+    margin: auto;
+}
+.menu button:hover{
+    color:green;
+    background-color:grey;
+}
+.gendericon {
+    width: 20px;
+    height: 20px;
+  }
+  .photo{
+      width:80px;
+      height:80px;
+      border-radius: 30px;
+  }
