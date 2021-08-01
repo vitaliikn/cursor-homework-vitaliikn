@@ -8,17 +8,18 @@ function playSound(e) {
     sound.play();
 
 }
-keys.addEventListener('click', e => {
-    audio.forEach(s => {
-        if (s.className == e.target.id) {
-            buttons.forEach(b => {
-                if (b.id == e.target.id) {
-                    b.classList.add("sound")
+keys.addEventListener('click', event => {
+    audio.forEach(sound => {
+        if (sound.className == event.target.id) {
+            buttons.forEach(button => {
+                if (button.id == event.target.id) {
+                    button.classList.add("sound")
                 }
             })
-            s.play()
+            sound.play()
+            sound.currentTime = 0
         }
-        s.currentTime = 0
+        
     })
 })
 window.addEventListener('keydown', playSound);
